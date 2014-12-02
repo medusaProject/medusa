@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  h1 Create prize
+  form(method='POST', action='/postNewPrize')
+    input(type='text', placeholder='Title', name='title')
+    textarea(type='text', placeholder='Description', name='description')
+    input(type='text', placeholder='Prize', name='prize')
+    button(type='submit') Save

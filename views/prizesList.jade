@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  h1 Prizes list
+  table.table.table-hover
+    thead
+      tr
+        th Title
+        th Description
+        th Prize
+        th
+    tbody
+      each prize, i in prizes
+        tr
+          td #{prize.title}
+          td #{prize.description}
+          td #{prize.prize}
+          td
+            a.btn.btn-danger.btn-xs(type='button', href='/removePrize/#{prize._id}')
+              span.glyphicon.glyphicon-remove(aria-hidden='true')
+            
