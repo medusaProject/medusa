@@ -14,9 +14,11 @@ router.post('/postNewPrize', function (req, res) {
 
   // We create a new variable following the prize Scheme
   var newPrize = new prizes({
+    'units': req.param('units'),
     'title': req.param('title'),
     'description': req.param('description'),
-    'prize': req.param('prize')
+    'prize': req.param('prize'),
+    'coin': req.param('coin')
   });
 
   console.log(newPrize);

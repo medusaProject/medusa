@@ -5,16 +5,20 @@ block content
   table.table.table-hover
     thead
       tr
+        th Units
         th Title
         th Description
         th Prize
+        th Coin
         th
     tbody
       each prize, i in prizes
         tr
+          td #{prize.units}
           td #{prize.title}
           td #{prize.description}
           td #{prize.prize}
+          td #{prize.coin}
           td
             a.btn.btn-danger.btn-xs(type='button', href='/removePrize/#{prize._id}')
               span.glyphicon.glyphicon-remove(aria-hidden='true')

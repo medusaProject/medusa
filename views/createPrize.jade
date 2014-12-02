@@ -3,7 +3,9 @@ extends layout
 block content
   h1 Create prize
   form(method='POST', action='/postNewPrize')
+    input(type='text', placeholder='Units', name='units')
     input(type='text', placeholder='Title', name='title')
     textarea(type='text', placeholder='Description', name='description')
     input(type='text', placeholder='Prize', name='prize')
+    input(type='text', placeholder='Coin', name='coin')
     button(type='submit') Save
