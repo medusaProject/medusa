@@ -9,12 +9,16 @@ block content
         th Description
         th Prize
         th
+        th
     tbody
       each prize, i in prizes
         tr
           td #{prize.title}
           td #{prize.description}
           td #{prize.prize}
+          td
+            a.btn.btn-primary.btn-xs(type='button', href='/viewPrize/#{prize._id}')
+              span.glyphicon.glyphicon-eye-open(aria-hidden='true')
           td
             a.btn.btn-danger.btn-xs(type='button', href='/removePrize/#{prize._id}')
               span.glyphicon.glyphicon-remove(aria-hidden='true')

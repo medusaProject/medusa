@@ -58,6 +58,27 @@ router.get('/prizesList', function (req, res) {
   );
 });
 
+/* Shows a prize info */
+router.get('/viewPrize/:id', function (req, res) {
+  prizes.findById(
+    req.params.id,
+    function (err, prize) {
+      if (err) {
+        res.writeHead(200, {
+          'Content-Type': 'text/html; charset=UTF-8'
+        });
+        res.write('No prize found.');
+        res.end();
+      } else {
+        res.render(
+          'viewPrize', {
+            'prize': prize
+          }
+        );
+      }
+    });
+});
+
 /* Deletes a prizes */
 router.get('/removePrize/:id', function (req, res) {
   prizes.remove({
